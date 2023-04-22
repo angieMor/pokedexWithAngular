@@ -1,0 +1,30 @@
+<div class="pokemon-data">
+  <h2 *ngIf="pokemonData">{{ pokemonData.name | titlecase}}</h2>
+  <div class="pokemon-info">
+    <div *ngIf="pokemonData">
+      <img *ngIf="pokemonData.sprite" [src]="pokemonData.sprite" alt="Not Found" height="350" width="350">
+      <table>
+        <tbody>
+          <tr>
+            <td>#</td>
+            <td>{{ pokemonData.id }}</td>
+          </tr>
+          <tr>
+            <td>Type(s)</td>
+            <td>{{ pokemonData.types }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="pokemon-stats" *ngIf="pokemonData">
+    <table>
+      <tbody>
+        <tr *ngFor="let stat of pokemonData.stats">
+          <td>{{ stat.stat.name | titlecase }}</td>
+          <td>{{ stat.base_stat }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

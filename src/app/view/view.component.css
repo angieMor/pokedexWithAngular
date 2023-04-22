@@ -1,0 +1,54 @@
+.pokemon-data {
+  display: grid;
+  grid-template-areas:
+    "name name"
+    "info stats";
+}
+
+h2 {
+  font-family: "Syne", serif;
+  font-size: 42px;
+  text-align: center;
+  grid-area: name;
+}
+
+.pokemon-info {
+  grid-area: info;
+}
+
+.pokemon-stats {
+  grid-area: stats;
+}
+
+.pokemon-info div {
+  display: grid;
+}
+
+.pokemon-info img {
+  border: 5px solid #3F423B;
+  justify-self: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  justify-self: center;
+}
+
+td {
+  text-align: center;
+  border: 2px solid #3F423B;
+}
+
+.pokemon-info table {
+  max-width: 359px;
+}
+
+.pokemon-stats td {
+  min-width: 70px;
+}
+
+img{
+  background-color: #ED3A2B;
+}

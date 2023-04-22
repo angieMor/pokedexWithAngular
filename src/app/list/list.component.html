@@ -1,0 +1,33 @@
+<div class="pokemon-list">
+
+  <div class="input-container">
+    <input type="text" placeholder="Search by name or #" (keydown.enter)="searchPokemon(searchInput.value)" #searchInput>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <tbody>
+      <tr *ngFor="let pokemon of pokemonList">
+        <td [id]="pokemon.url.split('api/v2/pokemon/').pop().replace('/', '')" [ngClass]="{'selected' : selectedPokemon === pokemon}" (click)="setSelectedPokemon = pokemon">
+          {{ pokemon.url.split('api/v2/pokemon/').pop().replace('/', '') }}. {{ pokemon.name | titlecase }}
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination">
+    <button class="prev" [disabled]="currentPage === 1" (click)="previousPage()">
+      <<
+    </button>
+    <span>{{ currentPage }}</span>
+    <button class="next" [disabled]="pokemonList.length < pageSize" (click)="nextPage()">
+      >>
+    </button>
+  </div>
+
+  <div class="pagination-logo">
+    <img ngSrc="assets/logo_black.png" alt="Not Found" height="100" width="100">
+  </div>
+
+</div>

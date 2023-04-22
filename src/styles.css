@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  background-color: #EAE6D3;
+  font-family: "Space Grotesk", serif;
+  color: #3F423B;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.pokedex-container {
+  display: grid;
+  grid-template-areas: 'list list view view view view view';
+  grid-gap: 10px;
+  margin: 20px;
+  border: 3px #3F423B solid;
+}
+
+.list-container {
+  grid-area: list;
+  height: 100%;
+}
+
+.view-container {
+  grid-area: view;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 3px #3F423B solid;
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .pokedex-container {
+    width: fit-content;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .pokedex-container {
+    justify-self: center;
+    grid-template-areas:
+      'view'
+      'list';
+  }
+
+  .list-container {
+    width: 33em;
+  }
+}

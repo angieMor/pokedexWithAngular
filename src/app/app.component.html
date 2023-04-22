@@ -1,0 +1,5 @@
+<app-header></app-header>
+<div class="pokedex-container">
+  <app-list class="list-container" (pokemonSearch)="onSearchPokemon($event)"></app-list>
+  <app-view class="view-container" [inputPokemon]="selectedPokemon"></app-view>
+</div>

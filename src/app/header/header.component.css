@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  margin: 20px;
+  padding-bottom: 20px;
+  align-items: center;
+}
+
+.title {
+  font-family: "Syne", serif;
+  color: #ED3A2B;
+  font-size: 100px;
+  margin: 0;
+  padding-left: 40px;
+}
+
+@media only screen and (max-width: 1400px) {
+  img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .title {
+    font-size: 70px;
+  }
+}
